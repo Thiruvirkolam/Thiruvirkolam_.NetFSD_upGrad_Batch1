@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage Design</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px;
+            display: flex;          
+            justify-content: space-around;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 20px;
+            font-size: 20px;
+        }
+        @media (max-width: 768px) {
+
+            body {
+                background-color: lightblue; 
+            }
+
+            .content {
+                font-size: 16px;              
+            }
+
+            nav {
+                flex-direction: column;        
+                align-items: center;
+            }
+
+            nav a {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="content">
+    <h1>Responsive Webpage</h1>
+    <p>Resize the browser window see the changes and background color, font size, and navigation layout will adjust</p>
+</div
+</body>
+</html>
