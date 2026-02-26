@@ -1,89 +1,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mini Expense Tracker</title>
+    <title>IndexedDB Expense Tracker</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input, button { margin: 5px; padding: 6px; }
+        table { border-collapse: collapse; margin-top: 20px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background: #f2f2f2; }
+    </style>
 </head>
 <body>
-    <h2>Expense Tracker</h2>
-    Title: <input type="text" id="title"><br><br>
-    Amount: <input type="number" id="amount"><br><br>
-    Date: <input type="date" id="date"><br><br>
-    <button onclick="addExpense()">Add Expense</button>
-    <button onclick="viewExpenses()">View Expenses</button>
-    <h3>Expense List:</h3>
-    <ul id="expenseList"></ul>
+    
+<h2>Mini Expense Tracker (IndexedDB)</h2>
+<input type="text" id="title" placeholder="Expense Title">
+<input type="number" id="amount" placeholder="Amount">
+<input type="date" id="date">
+<button onclick="addExpense()">Add Expense</button>
+<button onclick="viewExpenses()">View Expenses</button>
+<div id="expenseList"></div>
 
 <script>
-    let db = openDatabase("ExpenseDB", "1.0", "Expense Database", 2 * 1024 * 1024);
-    db.transaction(function(tx) {
-        tx.executeSql(
-            "CREATE TABLE IF NOT EXISTS expenses (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, amount REAL, date TEXT)"
-        );
-    });
-    function addExpense() {
-        let title = document.getElementById("title").value;
-        let amount = document.getElementById("amount").value;
-        let date = document.getElementById("date").value;
-        db.transaction(function(tx) {
-            tx.executeSql(
-                "INSERT INTO expenses (title, amount, date) VALUES (?, ?, ?)",
-                [title, amount, date],
-                function() {
-                    alert("Expense Added");
-                },
-                function(tx, error) {
-                    alert("Insert Error: " + error.message);
-                }
-            );
-        }, function(error) {
-            alert("Transaction Error: " + error.message);
-        });
+let db;
+let request = indexedDB.open("ExpenseDB", 1);
+
+request.onerror = function(event) {
+    console.log("Database error:", event.target.errorCode);
+};
+
+request.onupgradeneeded = function(event) {
+    db = event.target.result;
+    let objectStore = db.createObjectStore("expenses", { keyPath: "id", autoIncrement: true });
+};
+
+request.onsuccess = function(event) {
+    db = event.target.result;
+    console.log("Database opened successfully");
+};
+
+function addExpense() {
+    let title = document.getElementById("title").value;
+    let amount = document.getElementById("amount").value;
+    let date = document.getElementById("date").value;
+
+    if (!title || !amount || !date) {
+        alert("Fill all fields");
+        return;
     }
-    function viewExpenses() {
-        let list = document.getElementById("expenseList");
-        list.innerHTML = "";
-        db.transaction(function(tx) {
-            tx.executeSql(
-                "SELECT * FROM expenses",
-                [],
-                function(tx, results) {
 
-                    for (let i = 0; i < results.rows.length; i++) {
+    let transaction = db.transaction(["expenses"], "readwrite");
 
-                        let item = results.rows.item(i);
+    transaction.onerror = function(event) {
+        console.log("Transaction error:", event.target.error);
+    };
 
-                        let li = document.createElement("li");
+    let store = transaction.objectStore("expenses");
 
-                        li.innerHTML =
-                            item.title + " - ₹" + item.amount +
-                            " (" + item.date + ")" +
-                            " <button onclick='deleteExpense(" + item.id + ")'>Delete</button>";
+    let expense = {
+        title: title,
+        amount: amount,
+        date: date
+    };
 
-                        list.appendChild(li);
-                    }
-                },
-                function(tx, error) {
-                    alert("Select Error: " + error.message);
-                }
-            );
+    let addRequest = store.add(expense);
 
+    addRequest.onsuccess = function() {
+        alert("Expense added successfully");
+        viewExpenses();
+    };
+
+    addRequest.onerror = function(event) {
+        console.log("Add error:", event.target.error);
+    };
+}
+
+function viewExpenses() {
+    let transaction = db.transaction(["expenses"], "readonly");
+    let store = transaction.objectStore("expenses");
+    let getAllRequest = store.getAll();
+
+    getAllRequest.onsuccess = function(event) {
+        let data = event.target.result;
+
+        let output = "<table><tr><th>ID</th><th>Title</th><th>Amount</th><th>Date</th><th>Action</th></tr>";
+
+        data.forEach(function(item) {
+            output += `<tr>
+                <td>${item.id}</td>
+                <td>${item.title}</td>
+                <td>${item.amount}</td>
+                <td>${item.date}</td>
+                <td><button onclick="deleteExpense(${item.id})">Delete</button></td>
+            </tr>`;
         });
-    }
-    function deleteExpense(id) {
-        db.transaction(function(tx) {
-            tx.executeSql(
-                "DELETE FROM expenses WHERE id = ?",
-                [id],
-                function() {
-                    viewExpenses();
-                },
-                function(tx, error) {
-                    alert("Delete Error: " + error.message);
-                }
-            );
 
-        });
-    }
+        output += "</table>";
+        document.getElementById("expenseList").innerHTML = output;
+    };
+
+    getAllRequest.onerror = function(event) {
+        console.log("Fetch error:", event.target.error);
+    };
+}
+
+function deleteExpense(id) {
+    let transaction = db.transaction(["expenses"], "readwrite");
+    let store = transaction.objectStore("expenses");
+
+    let deleteRequest = store.delete(id);
+
+    deleteRequest.onsuccess = function() {
+        alert("Deleted successfully");
+        viewExpenses();
+    };
+
+    deleteRequest.onerror = function(event) {
+        console.log("Delete error:", event.target.error);
+    };
+}
 </script>
 </body>
 </html>
