@@ -1,1 +1,153 @@
+---Event Management System---
+
+=>Project Description
+
+EventSphere is a frontend Event Management Application developed using modern JavaScript (ES6+), modular architecture, and JSON Server as a fake REST API.
+
+The system allows administrators to manage events and users to view and register for events. The application follows separation of concerns using Models, Services, Controllers, and Utilities.
+
+This project demonstrates real-world concepts such as OOP, Async/Await, ES6 Modules, Form Validation, and CRUD operations without page reload.
+
+=>Features Implemented
+
+=>Admin Module
+
+* Add new event
+* View all events
+* Delete event
+* Seat availability tracking
+* Event form validation
+
+=>User Module
+
+* View available events
+* View event details
+* Register for an event
+* Seat count decreases after registration
+* Registration form validation
+* Success and error messages
+
+=>Business Rules Implemented
+
+* Available seats decrease after successful registration
+* Registration blocked if no seats available
+* Capacity must be positive
+* Date cannot be past date
+* Proper error handling with try/catch
+* No page reload during CRUD operations
+
+
+=>Technologies Used
+
+* HTML5
+* CSS3
+* Bootstrap (UI Styling)
+* JavaScript (ES6+)
+* ES6 Modules (import/export)
+* JavaScript Classes (OOP)
+* Async/Await
+* Fetch API
+* JSON Server (Fake REST API)
+
+
+=>Project Folder Structure
+
+event-management/
+│
+├── index.html
+├── add-event.html
+├── register.html
+│
+├── js/
+│   ├── models/
+│   │     Event.js
+│   │     Registration.js
+│   │
+│   ├── services/
+│   │     eventService.js
+│   │     registrationService.js
+│   │
+│   ├── controllers/
+│   │     eventController.js
+│   │     registrationController.js
+│   │
+│   ├── utils/
+│   │     validator.js
+│   │     uiHelper.js
+│   │
+│   └── main.js
+│
+└── db.json
+
+
+=>How to Run the Project
+
+#Step 1: Install JSON Server (If not installed)
+
+npm install -g json-server
+
+#Step 2: Navigate to Project Folder
+
+cd event-management
+
+#Step 3: Run JSON Server
+
+json-server --watch db.json --port 3000
+
+#Step 4: Open Project
+
+Use Live Server in VS Code and open:
+
+
+index.html
+
+
+=>API Endpoints Used
+
+* GET /events
+* POST /events
+* PUT /events/:id
+* DELETE /events/:id
+* GET /registrations
+* POST /registrations
+
+Base URL:
+
+http://localhost:3000
+
+
+=>Non-Functional Requirements Achieved
+
+* Modular architecture
+* No global variable pollution
+* Proper indentation and naming conventions
+* Separation of concerns
+* Error handling implemented
+* Responsive UI using Bootstrap
+* No inline JavaScript
+
+
+=>Learning Outcomes
+
+* Implemented real-world modular JavaScript architecture
+* Understood REST API interaction using Fetch
+* Applied OOP concepts using Classes
+* Practiced async programming with Async/Await
+* Implemented business logic and validation rules
+* Built a complete CRUD-based frontend application
+
+
+=>Deliverables Included
+
+* Complete project folder
+* db.json file
+* README file
+* Working application screenshots
+
+
+=>Author
+
+Thiruvirkolam M
+EventSphere – Mini Project
+JavaScript ES6+ Event Management System
 
