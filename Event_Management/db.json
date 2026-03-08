@@ -1,0 +1,45 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "JavaScript Project",
+      "description": "Complete ES6 Project Workshop",
+      "date": "2026-03-10",
+      "location": "Bangalore",
+      "capacity": 100,
+      "availableSeats": 98
+    },
+    {
+      "id": "d1b0",
+      "title": "Food Fest",
+      "description": "A variety of food being sold to the company members with a lot of stalls inside the campus offering lot of varieties of food.",
+      "date": "2026-03-11",
+      "location": "Cognizant Technology Solutions - Elcot Sez, Sholinganallur, Chennai",
+      "capacity": 75,
+      "availableSeats": 75
+    }
+  ],
+  "registrations": [
+    {
+      "id": "e8f8",
+      "eventId": 2,
+      "participantName": "Thiru",
+      "email": "thiru@gmail.com",
+      "phone": "9687153245"
+    },
+    {
+      "id": "2770",
+      "eventId": 1,
+      "participantName": "Ashwin",
+      "email": "dagr@gmail.com",
+      "phone": "9513574682"
+    },
+    {
+      "id": "e8f9",
+      "eventId": 1,
+      "participantName": "Kishore",
+      "email": "kishore@gmail.com",
+      "phone": "6347852975"
+    }
+  ]
+}
