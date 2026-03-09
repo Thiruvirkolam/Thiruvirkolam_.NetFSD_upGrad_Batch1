@@ -268,6 +268,57 @@ FROM Departments WHERE DepartmentID = (SELECT TOP 1 DepartmentID FROM Students
 GROUP BY DepartmentID ORDER BY COUNT(StudentID) DESC)
 
 
+--Assignment 9 - Views
+  -- VIEW 1
+CREATE VIEW StudentDepartmentView AS
+SELECT s.StudentID,
+s.FirstName + ' ' + s.LastName AS StudentName,
+d.DepartmentName
+FROM Students s
+JOIN Departments d
+ON s.DepartmentID = d.DepartmentID
+
+-- VIEW 2
+CREATE VIEW StudentEnrollmentView AS
+SELECT s.FirstName + ' ' + s.LastName AS StudentName,
+c.CourseName,
+e.EnrollmentDate
+FROM Students s
+JOIN Enrollments e
+ON s.StudentID = e.StudentID
+JOIN Courses c
+ON e.CourseID = c.CourseID
+
+-- VIEW 3
+CREATE VIEW ExamResultView AS
+SELECT s.FirstName + ' ' + s.LastName AS StudentName,
+c.CourseName,
+ex.ExamCategory,
+m.MarksObtained
+FROM Students s
+JOIN Marks m
+ON s.StudentID = m.StudentID
+JOIN Exams ex
+ON m.ExamID = ex.ExamID
+JOIN Courses c
+ON ex.CourseID = c.CourseID
+
+-- QUERY VIEWS
+SELECT * FROM StudentDepartmentView
+SELECT * FROM StudentEnrollmentView
+SELECT * FROM ExamResultView
+
+-- UPDATE THROUGH VIEW (example)
+UPDATE StudentDepartmentView
+SET StudentName = 'Anand Kumar'
+WHERE StudentID = 1
+
+-- DROP VIEWS
+DROP VIEW StudentDepartmentView
+DROP VIEW StudentEnrollmentView
+DROP VIEW ExamResultView
+
+
 --Assignment 10 - Indexes
 -- 1
 CREATE INDEX idx_students_lastname ON Students(LastName)
@@ -282,4 +333,5 @@ CREATE INDEX idx_enrollments_student_course ON Enrollments(StudentID, CourseID)
 CREATE UNIQUE INDEX idx_departments_name ON Departments(DepartmentName)
 
 -- 5
+
 DROP INDEX idx_students_lastname ON Students
