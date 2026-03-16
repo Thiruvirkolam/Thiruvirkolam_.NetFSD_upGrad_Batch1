@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IndexedDB Expense Tracker</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input, button { margin: 5px; padding: 6px; }
+        table { border-collapse: collapse; margin-top: 20px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background: #f2f2f2; }
+    </style>
+</head>
+<body>
+    
+<h2>Mini Expense Tracker (IndexedDB)</h2>
+<input type="text" id="title" placeholder="Expense Title">
+<input type="number" id="amount" placeholder="Amount">
+<input type="date" id="date">
+<button onclick="addExpense()">Add Expense</button>
+<button onclick="viewExpenses()">View Expenses</button>
+<div id="expenseList"></div>
+
+<script>
+let db;
+let request = indexedDB.open("ExpenseDB", 1);
+
+request.onerror = function(event) {
+    console.log("Database error:", event.target.errorCode);
+};
+
+request.onupgradeneeded = function(event) {
+    db = event.target.result;
+    let objectStore = db.createObjectStore("expenses", { keyPath: "id", autoIncrement: true });
+};
+
+request.onsuccess = function(event) {
+    db = event.target.result;
+    console.log("Database opened successfully");
+};
+
+function addExpense() {
+    let title = document.getElementById("title").value;
+    let amount = document.getElementById("amount").value;
+    let date = document.getElementById("date").value;
+
+    if (!title || !amount || !date) {
+        alert("Fill all fields");
+        return;
+    }
+
+    let transaction = db.transaction(["expenses"], "readwrite");
+
+    transaction.onerror = function(event) {
+        console.log("Transaction error:", event.target.error);
+    };
+
+    let store = transaction.objectStore("expenses");
+
+    let expense = {
+        title: title,
+        amount: amount,
+        date: date
+    };
+
+    let addRequest = store.add(expense);
+
+    addRequest.onsuccess = function() {
+        alert("Expense added successfully");
+        viewExpenses();
+    };
+
+    addRequest.onerror = function(event) {
+        console.log("Add error:", event.target.error);
+    };
+}
+
+function viewExpenses() {
+    let transaction = db.transaction(["expenses"], "readonly");
+    let store = transaction.objectStore("expenses");
+    let getAllRequest = store.getAll();
+
+    getAllRequest.onsuccess = function(event) {
+        let data = event.target.result;
+
+        let output = "<table><tr><th>ID</th><th>Title</th><th>Amount</th><th>Date</th><th>Action</th></tr>";
+
+        data.forEach(function(item) {
+            output += `<tr>
+                <td>${item.id}</td>
+                <td>${item.title}</td>
+                <td>${item.amount}</td>
+                <td>${item.date}</td>
+                <td><button onclick="deleteExpense(${item.id})">Delete</button></td>
+            </tr>`;
+        });
+
+        output += "</table>";
+        document.getElementById("expenseList").innerHTML = output;
+    };
+
+    getAllRequest.onerror = function(event) {
+        console.log("Fetch error:", event.target.error);
+    };
+}
+
+function deleteExpense(id) {
+    let transaction = db.transaction(["expenses"], "readwrite");
+    let store = transaction.objectStore("expenses");
+
+    let deleteRequest = store.delete(id);
+
+    deleteRequest.onsuccess = function() {
+        alert("Deleted successfully");
+        viewExpenses();
+    };
+
+    deleteRequest.onerror = function(event) {
+        console.log("Delete error:", event.target.error);
+    };
+}
+</script>
+</body>
+</html>

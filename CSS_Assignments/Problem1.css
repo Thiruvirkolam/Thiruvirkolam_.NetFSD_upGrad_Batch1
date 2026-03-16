@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f9ff;
+}
+
+h1 {
+    color: #005c99;
+}
+
+p {
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header {
+    background-color: #0077cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.banner {
+    background-color: #cce6ff;
+    text-align: center;
+    padding: 40px;
+}
+
+.services {
+    padding: 30px;
+    text-align: center;
+}
+
+.services p {
+    font-size: 14px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 20px;          /* Box Model */
+    margin: 15px;           /* Box Model */
+    border: 2px solid #0077cc; /* Box Model */
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 250px;
+}
+
+#contact {
+    background-color: #e6f2ff;
+    padding: 30px;
+}
+
+input[type="text"] {
+    border: 2px solid #0077cc;
+    padding: 8px;
+}
+
+button {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005c99;
+}
+
+footer {
+    background-color: #0077cc;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

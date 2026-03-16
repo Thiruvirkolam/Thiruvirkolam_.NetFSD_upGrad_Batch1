@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Personal Info</legend>
+            Name: <input type="text" name="name"><br><br>
+            Password: <input type="password" name="password"><br><br>
+            Gender:
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female<br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Skills & Country</legend>
+            Skills:
+            <input type="checkbox" name="skills" value="HTML"> HTML
+            <input type="checkbox" name="skills" value="CSS"> CSS
+            <input type="checkbox" name="skills" value="JS"> JS<br><br>
+            Country:
+            <select name="country">
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Australia">Australia</option>
+            </select><br><br>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

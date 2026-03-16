@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SecureBank Dashboard</title>
+    <link rel="stylesheet" href="Problem4.css">
+    <style>
+        .balance-highlight {
+            background-color: #e6ffe6;
+            border-left: 5px solid green;
+        }
+    </style>
+</head>
+
+<body>
+<div style="background-color:#ffcccc;color:#990000;padding:10px;text-align:center;">
+    Never share your OTP or password with anyone.
+</div>
+
+<header>
+    <h1>SecureBank</h1>
+</header>
+
+<main class="dashboard">
+
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li>Dashboard</li>
+            <li>Accounts</li>
+            <li>Transfers</li>
+            <li>Settings</li>
+        </ul>
+
+        <div class="login-box">
+            <h3>Login</h3>
+            <input type="text" placeholder="Username"><br><br>
+            <input type="password" placeholder="Password"><br><br>
+            <button>Login</button>
+        </div>
+    </aside>
+
+    <section class="content">
+
+        <div class="cards">
+
+            <div class="card balance-highlight">
+                <h3>Account Balance</h3>
+                <p>$8,500</p>
+            </div>
+
+            <div class="card">
+                <h3>Savings</h3>
+                <p>$5,000</p>
+            </div>
+
+            <div class="card">
+                <h3>Fixed Deposit</h3>
+                <p>$3,500</p>
+            </div>
+
+        </div>
+
+        <h2>Recent Transactions</h2>
+
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>10 Feb</td>
+                <td>Online Shopping</td>
+                <td class="debit">Debit</td>
+                <td class="debit">- $120</td>
+            </tr>
+            <tr>
+                <td>12 Feb</td>
+                <td>Salary Credit</td>
+                <td class="credit">Credit</td>
+                <td class="credit">+ $2000</td>
+            </tr>
+            <tr>
+                <td>15 Feb</td>
+                <td>Electricity Bill</td>
+                <td class="debit">Debit</td>
+                <td class="debit">- $80</td>
+            </tr>
+        </table>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 SecureBank. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
