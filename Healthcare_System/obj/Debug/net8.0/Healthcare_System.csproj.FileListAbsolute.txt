@@ -1,0 +1,14 @@
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\bin\Debug\net8.0\Healthcare_System.exe
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\bin\Debug\net8.0\Healthcare_System.deps.json
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\bin\Debug\net8.0\Healthcare_System.runtimeconfig.json
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\bin\Debug\net8.0\Healthcare_System.dll
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\bin\Debug\net8.0\Healthcare_System.pdb
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\Healthcare_System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\Healthcare_System.AssemblyInfoInputs.cache
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\Healthcare_System.AssemblyInfo.cs
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\Healthcare_System.csproj.CoreCompileInputs.cache
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\Healthcare_System.dll
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\refint\Healthcare_System.dll
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\Healthcare_System.pdb
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\Healthcare_System.genruntimeconfig.cache
+C:\Users\Ashwin\Documents\Cognizant\C# DOTNET\Assignment\Inheritance_Assignment\Healthcare_System\obj\Debug\net8.0\ref\Healthcare_System.dll
