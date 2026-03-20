@@ -1,0 +1,6 @@
+Student Name: Kowshik
+Roll Number: 2
+Marks: 93, 89, 94
+Total: 276
+Average: 92
+Grade: A

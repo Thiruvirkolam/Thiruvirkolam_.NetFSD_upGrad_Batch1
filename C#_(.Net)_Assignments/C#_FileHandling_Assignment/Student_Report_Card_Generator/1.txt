@@ -1,0 +1,6 @@
+Student Name: Thiru
+Roll Number: 1
+Marks: 90, 95, 92
+Total: 277
+Average: 92.33333333333333
+Grade: A
