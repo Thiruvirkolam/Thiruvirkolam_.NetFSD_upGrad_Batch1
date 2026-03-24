@@ -1,0 +1,11 @@
+CREATE DATABASE LibraryDB;
+GO
+
+USE LibraryDB;
+GO
+
+CREATE TABLE Books (
+    BookId INT PRIMARY KEY IDENTITY,
+    Title NVARCHAR(200)
+);
+GO
