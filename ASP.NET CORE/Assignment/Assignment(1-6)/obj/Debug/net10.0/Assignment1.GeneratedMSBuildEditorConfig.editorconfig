@@ -30,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/Math/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aFxSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/Shared/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFib3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +52,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/Student/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/Teacher/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/Teacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/User/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ashwin/Documents/Cognizant/ASP DOT NET CORE/Assignment/Assignment1/Views/_ViewImports.cshtml]
