@@ -1,0 +1,34 @@
+@model Assignment3.Models.User
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<h2>Edit Profile</h2>
+
+<form asp-action="Edit" method="post">
+
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <!-- 🔥 IMPORTANT HIDDEN FIELD -->
+    <input type="hidden" asp-for="Password" />
+    <input type="hidden" asp-for="ConfirmPassword" />
+
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

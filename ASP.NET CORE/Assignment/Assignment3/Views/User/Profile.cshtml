@@ -1,0 +1,17 @@
+@model Assignment3.ViewModels.UserViewModel
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h2>User Profile</h2>
+
+<div>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+</div>
+
+<br />
+
+<a asp-action="Edit" asp-controller="User" class="btn btn-warning">Edit Profile</a>
+<a asp-action="Logout" asp-controller="User" class="btn btn-danger">Logout</a>
