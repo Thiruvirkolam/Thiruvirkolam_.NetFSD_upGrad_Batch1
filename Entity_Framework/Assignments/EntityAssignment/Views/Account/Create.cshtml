@@ -1,0 +1,35 @@
+@model EntityAssignment.Models.Account
+
+<div class="container mt-4">
+    <h2 class="text-success">Create Account</h2>
+
+    <form method="post" class="card p-4 shadow">
+        <div class="mb-3">
+            <label class="form-label">Account Type</label>
+            <input asp-for="AccountType" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Customer</label>
+            <input asp-for="Customer" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Balance</label>
+            <input asp-for="Balance" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Branch</label>
+            <input asp-for="Branch" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Create Date</label>
+            <input asp-for="CreateDate" type="date" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="/Account" class="btn btn-secondary">Back</a>
+    </form>
+</div>
