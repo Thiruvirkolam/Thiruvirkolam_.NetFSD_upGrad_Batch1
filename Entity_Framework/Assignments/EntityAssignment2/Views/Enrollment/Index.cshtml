@@ -1,0 +1,29 @@
+@model IEnumerable<EntityAssignment2.Models.Enrollment>
+
+<h2>Enrollments</h2>
+
+<a asp-action="Create">Add New Enrollment</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Course</th>
+            <th>Grade</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.Student?.Name</td>
+            <td>@e.Course?.Title</td>
+            <td>@e.Grade</td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@e.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
