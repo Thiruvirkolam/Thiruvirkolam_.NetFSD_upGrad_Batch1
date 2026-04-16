@@ -1,0 +1,17 @@
+@ApiGateway_HostAddress = http://localhost:5000
+
+### Get Flights
+GET {{ApiGateway_HostAddress}}/gateway/flights
+Accept: application/json
+
+###
+
+### Get Bookings
+GET {{ApiGateway_HostAddress}}/gateway/bookings
+Accept: application/json
+
+###
+
+### Get Passengers
+GET {{ApiGateway_HostAddress}}/gateway/passengers
+Accept: application/json
