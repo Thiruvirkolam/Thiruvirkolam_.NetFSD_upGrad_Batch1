@@ -1,0 +1,9 @@
+<h2>Login Status</h2>
+
+<p *ngIf="isLoggedIn; else loggedOut">
+  Welcome User
+</p>
+
+<ng-template #loggedOut>
+  <p>Please Login</p>
+</ng-template>

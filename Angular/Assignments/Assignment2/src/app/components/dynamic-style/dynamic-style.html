@@ -1,0 +1,9 @@
+<h2>Dynamic Styling</h2>
+
+<p [ngStyle]="{ 'font-size.px': fontSize, 'color': textColor }">
+  This paragraph changes style dynamically.
+</p>
+
+<button (click)="increaseFont()">Increase Font</button>
+<button (click)="decreaseFont()">Decrease Font</button>
+<button (click)="changeColor()">Change Color</button>
