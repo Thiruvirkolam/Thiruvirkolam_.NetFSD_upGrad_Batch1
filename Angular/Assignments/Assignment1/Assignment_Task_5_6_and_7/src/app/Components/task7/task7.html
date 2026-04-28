@@ -1,0 +1,16 @@
+<h2>Product List</h2>
+
+<div *ngFor="let product of products">
+  <h3>{{ product.name }}</h3>
+  <p>Price: ₹{{ product.price }}</p>
+
+  <p *ngIf="product.price > 500; else budget">
+    Premium Product
+  </p>
+
+  <ng-template #budget>
+    <p>Budget Product</p>
+  </ng-template>
+
+  <hr>
+</div>

@@ -1,0 +1,8 @@
+<p>task5 works!</p>
+<h2>ngIf Login Toggle Example</h2>
+
+<button (click)="toggleLogin()">
+  {{ isLoggedIn ? 'Logout' : 'Login' }}
+</button>
+
+<h3 *ngIf="isLoggedIn">Welcome User</h3>
